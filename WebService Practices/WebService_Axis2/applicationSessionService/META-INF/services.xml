@@ -1,0 +1,31 @@
+<serviceGroup>
+<service name="LoginSessionService" scope="application">
+<!--name是当前发布WebService的名称，scope是会话作用域。保存在Session中就要用这个transportsession这个作用域。-->
+<description>
+Web Service Session例子
+</description>
+<parameter name="ServiceClass">test.service.LoginSessionService</parameter>
+<!--这个是当前Service的类路径，包名+类名-->
+<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+		class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+	</messageReceivers>
+</service>
+
+<service name="SearchSessionService" scope="application">
+<!--name是当前发布WebService的名称，scope是会话作用域。保存在Session中就要用这个transportsession这个作用域。-->
+<description>
+Web Service Search Session例子
+</description>
+<parameter name="ServiceClass">test.service.SearchSessionService</parameter>
+<!--这个是当前Service的类路径，包名+类名-->
+<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+		class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+	</messageReceivers>
+</service>
+</serviceGroup>

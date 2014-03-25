@@ -1,0 +1,11 @@
+<service name="LoginService" scope="transportsession">
+<!--name是当前发布WebService的名称，scope是会话作用域。保存在Session中就要用这个transportsession这个作用域。-->
+<parameter name="ServiceClass">LoginService</parameter>
+<!--这个是当前Service的类路径，包名+类名-->
+<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+		class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+	</messageReceivers>
+</service>
